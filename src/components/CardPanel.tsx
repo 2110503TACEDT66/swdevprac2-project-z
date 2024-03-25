@@ -3,27 +3,27 @@ import { useReducer, useState } from 'react'
 import Card from '@/components/Card'
 import Link from 'next/link'
 import { useRef, useEffect } from 'react'
-import getHospitals from '@/libs/getHospitals'
+import getCompanies from '@/libs/getCompanies'
 
 export default function CardPanel() {
-    // const compareReducer = (compareList:Set<string>, action: {type:string, hospitalName:string})=>{ 
+    // const compareReducer = (compareList:Set<string>, action: {type:string, companyName:string})=>{ 
     //     switch(action.type) {
     //         case 'updateRating': {
-    //             return new Set (compareList.add(action.hospitalName)) } 
+    //             return new Set (compareList.add(action.companyName)) } 
     //         case 'deleteHospital': {
-    //             compareList.delete(action.hospitalName)
+    //             compareList.delete(action.companyName)
     //             return new Set (compareList)
     //         }
     //         default: return compareList
     //     }
     // }
 
-    const [hospitalResponse, setHospitalResponse]= useState<HospitalJson|null>(null)
+    const [companyResponse, setCompanyResponse]= useState<HospitalJson|null>(null)
 
     useEffect(()=>{
         const fetchData= async()=>{
-            const hospitals= await getHospitals()
-            setHospitalResponse(hospitals)
+            const companies= await getCompanies()
+            setCompanyResponse(companies)
         }
         fetchData()
     },[])
@@ -40,23 +40,23 @@ export default function CardPanel() {
     ])
 
     
-    const compareReducer = (compareList:Map<string, number>, action: {type:string, hospitalName:string, ratingValue:number})=>{ 
+    const compareReducer = (compareList:Map<string, number>, action: {type:string, companyName:string, ratingValue:number})=>{ 
         switch(action.type) {
             case 'updateRating': {
                 if (action.ratingValue !== 0 && action.ratingValue !== null) {
-                    compareList.set(action.hospitalName, action.ratingValue);
+                    compareList.set(action.companyName, action.ratingValue);
                 } else {
-                    // compareList.set(action.hospitalName, 0);
-                    compareList.delete(action.hospitalName);
+                    // compareList.set(action.companyName, 0);
+                    compareList.delete(action.companyName);
                 }
                 return new Map(compareList);
-                //     return new Set(compareList.add(action.hospitalName));
+                //     return new Set(compareList.add(action.companyName));
                 // } else {
                 //     return compareList;
                 // }
             }
             case 'deleteHospital': {
-                compareList.delete(action.hospitalName)
+                compareList.delete(action.companyName)
                 return new Map (compareList)
             }
             default: return compareList
@@ -69,59 +69,28 @@ export default function CardPanel() {
     // const [ratingList, dispatchCompare]= useReducer(compareReducer, new Map<string, number>())
 
     // const mockHospitalRepo=[
-    //     {hid:"001", name:'Chulalongkorn Hospital', image:'/img/chula.jpg'} ,
-    //     {hid:"002", name:'Rajavithi Hospital', image:'/img/rajavithi.jpg'} ,
-    //     {hid:"003", name:'Thammasat University Hospital', image:'/img/thammasat.jpg'} 
+    //     {cid:"001", name:'Chulalongkorn Hospital', image:'/img/chula.jpg'} ,
+    //     {cid:"002", name:'Rajavithi Hospital', image:'/img/rajavithi.jpg'} ,
+    //     {cid:"003", name:'Thammasat University Hospital', image:'/img/thammasat.jpg'} 
     // ]
 
-    if(!hospitalResponse) return (<p>Hospital Panel is Loading ...</p>)
+    if(!companyResponse) return (<p>Company Panel is Loading ...</p>)
 
     return (
       <div className='font-mono' >
         <div style={{margin:"20px", display:"flex", 
           flexDirection:"row", alignContent:"space-around" ,
           justifyContent:"space-around", flexWrap:"wrap", padding:"10px"}}>
-            {/* {mockHospitalRepo.map((hospitalItem)=>( */}
-            {hospitalResponse.data.map((hospitalItem:HospitalItem)=>(
-                <Link href={`/hospital/${hospitalItem.id}`} className='w-1/5' >
-                    <Card hospitalName={hospitalItem.name} imgSrc={hospitalItem.picture}
+            {/* {mockHospitalRepo.map((companyItem)=>( */}
+            {companyResponse.data.map((companyItem:HospitalItem)=>(
+                <Link href={`/company/${companyItem.id}`} className='w-1/5' >
+                    <Card companyName={companyItem.name} imgSrc={companyItem.picture}
                     // onCompare={(card:string, ratingValue: number) => 
-                    //     dispatchCompare({type:'updateRating', hospitalName:card, ratingValue: ratingValue||0 })}
+                    //     dispatchCompare({type:'updateRating', companyName:card, ratingValue: ratingValue||0 })}
                     />    
                 </Link>
             ))}
-          {/* <Card hospitalName='Chulalongkorn Hospital' imgSrc='/img/chula.jpg' 
-            // onCompare={(card:string)=>dispatchCompare({type:'updateRating',hospitalName:card})} 
-            onCompare={(card:string, ratingValue: number) => 
-                dispatchCompare({type:'updateRating', hospitalName:card, ratingValue: ratingValue||0 })}       />
-          <Card hospitalName='Rajavithi Hospital' imgSrc='/img/rajavithi.jpg'
-            onCompare={(card:string, ratingValue: number) => 
-                dispatchCompare({type:'updateRating', hospitalName:card, ratingValue: ratingValue||0})} />
-          <Card hospitalName='Thammasat University Hospital' imgSrc='/img/thammasat.jpg'
-            onCompare={(card:string, ratingValue: number) => 
-                dispatchCompare({type:'updateRating', hospitalName:card, ratingValue: ratingValue||0})} />*/}
         </div> 
-        
-{/*
-        <div className="w-full text-xl font-medium text-slate-700 p-[10px]">
-            Compare List {compareList.size}
-        </div>
-             
-        {Array.from(compareList).map(([hos,rat])=> 
-                <div className="w-full text-slate-600 pl-[20px]" 
-                    data-testid= {hos} key={hos} 
-                    onClick={()=>dispatchCompare({type:'deleteHospital',hospitalName:hos,ratingValue:rat})}> 
-                    {hos}: {rat}
-                </div>
-        )} */}
-
-
-        {/* {Array.from(compareList.keys()).map((card)=> 
-            <div className="w-full font-slate-600 pl-[20px]" key={card} 
-                onClick={()=>dispatchCompare({type:'deleteHospital',hospitalName:card})} > 
-                {card} : {compareList.get(card)} 
-            </div>
-        )} */}
 
         <button className='block rounded-md bg-sky-600 
             hover:bg-indigo-600 px-3 py-2 text-white shadow-sm' 

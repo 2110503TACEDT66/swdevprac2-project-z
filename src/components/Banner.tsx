@@ -22,7 +22,7 @@ export default function Banner(){
               objectFit='cover'
             />
             <div className={styles.bannerText}>
-                <h1 className='text-4xl font-medium tracking-wider'>Vaccine Service Center</h1>
+                <h1 className='text-4xl font-medium tracking-wider'>Online Job Fair Registration</h1>
                 <br></br>
                 <h3 className='text-xl font-mono tracking-widest'>Your Health Matters : Visit Our Vaccine Service Center Today!</h3>
             </div>
@@ -34,8 +34,8 @@ export default function Banner(){
             <button className="bg-white font-mono text-cyan-600 border border-cyan-600 
             font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 right-0 
             hover:bg-cyan-600 hover:text-white hover:border-transparent" 
-            onClick={(e)=>{e.stopPropagation(); router.push('/hospital')}}>
-                Select Hospital
+            onClick={(e)=>{e.stopPropagation(); router.push('/company')}}>
+                Select Company
             </button>
         </div>
     );

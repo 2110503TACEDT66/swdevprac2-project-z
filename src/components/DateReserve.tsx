@@ -5,10 +5,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { TextField, Select, MenuItem, Button} from '@mui/material'
 import { Dayjs } from "dayjs"
 import { useState } from "react"
-import Hospital from "@/app/(hospitalinfo)/hospital/page"
+import Company from "@/app/(companyinfo)/company/page"
 
-export default function DateReserve ({onDateChange, onHospitalChange, onNameChange, onLastNameChange, onCitizenIdChange}
-    :{onDateChange:Function, onHospitalChange:Function, onNameChange:Function, onLastNameChange:Function, onCitizenIdChange:Function}) {
+export default function DateReserve ({onDateChange, onCompanyChange, onNameChange, onLastNameChange, onCitizenIdChange}
+    :{onDateChange:Function, onCompanyChange:Function, onNameChange:Function, onLastNameChange:Function, onCitizenIdChange:Function}) {
 
 
     // const [name, setName]= useState<string|null>(null)
@@ -61,7 +61,7 @@ export default function DateReserve ({onDateChange, onHospitalChange, onNameChan
                 }}
             />
             <Select variant="standard" name="hospital" id="hospital" value={hospital}
-            onChange={(e)=>{setHospital(e.target.value); onHospitalChange(e.target.value);}}
+            onChange={(e)=>{setHospital(e.target.value); onCompanyChange(e.target.value);}}
             className="h-[3em] w-[200px]"> 
                 <MenuItem value="Chula">Chulalongkorn Hospital</MenuItem>
                 <MenuItem value="Rajavithi">Rajavithi Hospital</MenuItem>

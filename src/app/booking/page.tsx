@@ -27,12 +27,12 @@ export default function Booking () {
 
     const makeBooking=()=>{
         // if(name && surname && id && hname && bookDate){
-        if(name && lastName && citizenId && PickUpHospital && bookDate){
+        if(name && lastName && citizenId && PickUpCompany && bookDate){
             const item:BookingItem={
                 name: name,
                 surname: lastName,
                 id: citizenId,
-                hospital: PickUpHospital,
+                hospital: PickUpCompany,
                 bookDate: dayjs(bookDate).format("YYYY/MM/DD")
             }
             dispatch(addBooking(item))
@@ -44,7 +44,7 @@ export default function Booking () {
     const [citizenId, setCitizenId] = useState<string>('');
 
     const [bookDate, setBookDate]= useState<Dayjs|null>(null)
-    const [PickUpHospital, setPickUpHospital]= useState<string>('Chulalongkorn Hospital')
+    const [PickUpCompany, setPickUpCompany]= useState<string>('Chulalongkorn Hospital')
 
     return (
         <main className="w-[100%] font-mono text-gray-600 flex flex-col items-center space-y-4 bg-white p-[60px]">
@@ -65,12 +65,12 @@ export default function Booking () {
             } */}
                 
             <div className="text-2xl font-bold text-blue-900 ">New Booking</div> 
-            <div className="text-xl text-slate-700 ">Hospital</div> 
+            <div className="text-xl text-slate-700 ">Company</div> 
             <div className="w-fit space-y-2 pt-[30px] pb-[30px]">
                 <div className="text-md text-left text-gray-600 pb-[20px]"> 
                     Vaccination booking</div> 
                 <DateReserve onDateChange={(value:Dayjs)=>{setBookDate(value)}}
-                onHospitalChange={(value:string)=>setPickUpHospital(value)} 
+                onCompanyChange={(value:string)=>setPickUpCompany(value)} 
                 onNameChange={(value:string)=>setName(value)}
                 onLastNameChange={(value:string)=>setLastName(value)}
                 onCitizenIdChange={(value:string)=>setCitizenId(value)}
