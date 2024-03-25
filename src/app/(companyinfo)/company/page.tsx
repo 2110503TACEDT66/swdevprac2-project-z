@@ -12,7 +12,7 @@ export default async function Company(){
             <h1 className="text-xl font-mono text-slate-700">
                 Select Your Company </h1>
             <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
-                <CompanyCatalog hospitalsJson={companies}/>
+                <CompanyCatalog companyJson={companies}/>
             </Suspense>
             {/* <hr className="my-10" />
             <h1 className="text-xl font-mono text-slate-700">TRY Client-Side Company Panel</h1>
