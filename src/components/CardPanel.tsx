@@ -18,7 +18,7 @@ export default function CardPanel() {
     //     }
     // }
 
-    const [companyResponse, setCompanyResponse]= useState<HospitalJson|null>(null)
+    const [companyResponse, setCompanyResponse]= useState<CompanyJson|null>(null)
 
     useEffect(()=>{
         const fetchData= async()=>{
@@ -82,7 +82,7 @@ export default function CardPanel() {
           flexDirection:"row", alignContent:"space-around" ,
           justifyContent:"space-around", flexWrap:"wrap", padding:"10px"}}>
             {/* {mockHospitalRepo.map((companyItem)=>( */}
-            {companyResponse.data.map((companyItem:HospitalItem)=>(
+            {companyResponse.data.map((companyItem:CompanyItem)=>(
                 <Link href={`/company/${companyItem.id}`} className='w-1/5' >
                     <Card companyName={companyItem.name} imgSrc={companyItem.picture}
                     // onCompare={(card:string, ratingValue: number) => 

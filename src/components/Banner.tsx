@@ -24,7 +24,7 @@ export default function Banner(){
             <div className={styles.bannerText}>
                 <h1 className='text-4xl font-medium tracking-wider'>Online Job Fair Registration</h1>
                 <br></br>
-                <h3 className='text-xl font-mono tracking-widest'>Your Health Matters : Visit Our Vaccine Service Center Today!</h3>
+                <h3 className='text-xl font-mono tracking-widest'>Are you ready to take the next step in your career journey? Whether you're a seasoned professional looking for new opportunities or a recent graduate eager to kickstart your career, the Career Advancement Expo is the place to be!</h3>
             </div>
             {
                 session? <div className='z-30 absolute top-5 right-10 font-semibold text-cyan-800 text-xl'>

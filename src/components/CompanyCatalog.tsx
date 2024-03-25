@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from '@/components/Card'
 import Link from 'next/link'
 
-export default async function CompanyCatalog({hospitalsJson}:{hospitalsJson:HospitalJson }) {
+export default async function CompanyCatalog({hospitalsJson}:{hospitalsJson:CompanyJson }) {
     const hospitalJsonReady= await hospitalsJson
     
     return(
@@ -12,7 +12,7 @@ export default async function CompanyCatalog({hospitalsJson}:{hospitalsJson:Hosp
             flexDirection:"row", alignContent:"space-around" ,
             justifyContent:"space-around", flexWrap:"wrap", padding:"10px"}}>
                 {
-                    hospitalJsonReady.data.map((companyItem: HospitalItem)=>(
+                    hospitalJsonReady.data.map((companyItem: CompanyItem)=>(
                         <Link href={`/company/${companyItem.id}`} 
                         className='w-[100%] sm:w-[50%] md:w-[30%] lg:w-[25%] p-2 sm:p-4 md:p-4 lg:p-8'>
                             <Card companyName={companyItem.name} imgSrc={companyItem.picture} />    
