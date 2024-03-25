@@ -12,7 +12,7 @@ export const bookSlice= createSlice({
     initialState,
     reducers:{
         addBooking: (state, action:PayloadAction<BookingItem>)=>{
-            const existingIndex = state.bookItems.findIndex(item => item.id === action.payload.id);
+            const existingIndex = state.bookItems.findIndex(item => item.email === action.payload.email);
             if (existingIndex !== -1) {
                 state.bookItems[existingIndex] = action.payload;
             } else {
@@ -20,7 +20,7 @@ export const bookSlice= createSlice({
             }
         },
         removeBooking: (state, action:PayloadAction<string>)=>{
-            state.bookItems = state.bookItems.filter(item => item.id !== action.payload);
+            state.bookItems = state.bookItems.filter(item => item.email !== action.payload);
             // const remainItems= state.bookItems.filter(obj => {
             //     return (
             //     (obj.name!==action.payload.name) ||

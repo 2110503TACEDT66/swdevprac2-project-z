@@ -23,8 +23,8 @@ interface CompanyItem {
 
   interface BookingItem {
     name: string,
-    surname: string,
-    id: string,
-    hospital: string,
-    bookDate: string
+    email: string,
+    company: string,
+    bookDate: string,
+    bookTime: string
   }
