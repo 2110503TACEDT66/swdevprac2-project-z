@@ -3,6 +3,8 @@ import { removeBooking } from "@/redux/features/bookSlice"
 import {AppDispatch, useAppSelector } from "@/redux/store"
 import { useDispatch } from "react-redux"
 import Link from "next/link"
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 export default function BookingList(){
     const companyItems = useAppSelector((state)=>state.bookSlice.bookItems)
@@ -28,16 +30,17 @@ export default function BookingList(){
                         <tr><td>BookTime</td> <td>{bookingItem.bookTime}</td></tr>
                         </tbody></table>
             
-                    <div className="flex flex-row space-x-6 pt-[5px] pb-[5px]">
+                    <div className="flex flex-row space-x-6 pt-[5px] pb-[5px] pl-[10px]">
+                        
                         <button className="block rounded-md text-sm bg-sky-600 hover:bg-indigo-600 px-3 py-1 shadow-sm text-white"
                             onClick={()=>dispatch(removeBooking(bookingItem))}>
-                                remove from my booking
+                            remove from my booking <DeleteIcon></DeleteIcon>
                         </button>
 
                         {/* <Link href={`/booking?id=${params.cid}&name=${companyDetail.data.name}`}> */}
                         <Link href={`/editbooking?name=${bookingItem.name}&email=${bookingItem.email}&company=${bookingItem.company}`}>
                             <button className="block rounded-md text-sm bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white">
-                                edit my booking
+                                edit my booking <EditIcon></EditIcon>
                             </button>
                         </Link>
                     </div>
