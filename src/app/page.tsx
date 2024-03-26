@@ -3,13 +3,14 @@ import Banner from '@/components/Banner'
 import Card from '@/components/Card'
 import CardPanel from '@/components/CardPanel'
 import styles from './page.module.css'
+import SelectCard from '@/components/SelectCard'
 // import PromoteCard from '@/components/PromoteCard'
 
 export default function Home() {
   return (
     <main style={{ backgroundColor: "#FFFFFF" , paddingBottom: "30px"}}>
       <Banner/>
-      {/* <PromoteCard></PromoteCard> */}
+      <SelectCard></SelectCard>
     </main>
   )
 }

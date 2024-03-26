@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import InteractiveCard from './InteractiveCard';
 import Rating from '@mui/material/Rating';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function Card({ companyName, imgSrc, onCompare}: { companyName: string, imgSrc: string, onCompare?: Function}) {
     const [ratingValue, setRatingValue] = useState<number | null>(null);
@@ -18,7 +19,10 @@ export default function Card({ companyName, imgSrc, onCompare}: { companyName: s
             </div>
             <div className="w-full h-[15%] p-[10px] font-mono text-blue-950">
                 {companyName}
+                <br></br>
+                <AddIcon></AddIcon>
             </div>
+
 
             {/* <button className="block text-sm h-[10%] rounded-md bg-sky-600 
             hover:bg-indigo-600 mx-2 px-1 py-1 shadow-sm text-white"
