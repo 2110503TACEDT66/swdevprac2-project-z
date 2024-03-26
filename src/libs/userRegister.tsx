@@ -2,10 +2,10 @@ export default async function userRegister(userName:string, userTel: string, use
     try {
         const response =await fetch(`https://presentation-day-1-z.vercel.app/api/v1/auth/register`,{
             method: "POST",
-            mode: "no-cors",
+            // mode: "no-cors",
             headers: {
                 "Content-Type": "application/json" ,
-                "Access-Control-Allow-Origin": "*"
+                // "Access-Control-Allow-Origin": "*"
             },
             body: JSON.stringify({
                 name: userName,

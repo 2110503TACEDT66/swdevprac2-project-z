@@ -21,12 +21,14 @@ export default async function CompanyDetailPage({params}: {params:{cid:string}})
                 <div className="text-md mx-5">
                     <table className="table-auto font-mono border-separate border-spacing-2 tracking-wider" key={companyDetail.data.name}><tbody>
                     
-                        <tr><td width="100">Name</td> <td>{companyDetail.data.name}</td></tr>
+                        <tr><td width="110">Name</td> <td>{companyDetail.data.name}</td></tr>
                         <tr><td>Address</td> <td>{companyDetail.data.address}</td></tr>
                         <tr><td>District</td> <td>{companyDetail.data.district}</td></tr>
                         <tr><td>Province</td> <td>{companyDetail.data.province}</td></tr>
                         <tr><td>Postalcode</td> <td>{companyDetail.data.postalcode}</td></tr>
-                        <tr><td>Tel</td> <td>{companyDetail.data.tel}</td></tr>
+                        <tr><td>Website</td> <td>{companyDetail.data.website}</td></tr>
+                        <tr><td>Description</td> <td>{companyDetail.data.description}</td></tr>
+                        <tr><td>Tel.</td> <td>{companyDetail.data.tel}</td></tr>
                         </tbody></table>
                     <div className="pt-[20px]">
                         <Link href={`/booking?id=${params.cid}&name=${companyDetail.data.name}`}>
