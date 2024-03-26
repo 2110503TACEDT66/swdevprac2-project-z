@@ -4,7 +4,7 @@ export default async function userRegister(userName:string, userTel: string, use
             method: "POST",
             mode: "no-cors",
             headers: {
-                "Content-Type": "application/json" ,
+                "Content-Type": "application/json",
                 // "Access-Control-Allow-Origin": "*"
             },
             body: JSON.stringify({
@@ -15,7 +15,7 @@ export default async function userRegister(userName:string, userTel: string, use
                 role: userRole
             }),
         })
-        console.log('response :>> ', response);
+
         if(!response.ok){
             throw new Error("Failed to register")
         }
