@@ -7,10 +7,10 @@ import { Dayjs } from "dayjs"
 import { useState } from "react"
 import Company from "@/app/(companyinfo)/company/page"
 
-export default function DateReserve ({onNameChange, onEmailChange, onDateChange, onTimeChange}
-        :{onNameChange:Function, onEmailChange:Function, onDateChange:Function, onTimeChange:Function}) {
-// export default function DateReserve ({onDateChange, onTimeChange}
-//     :{onDateChange:Function, onTimeChange:Function}) {
+// export default function DateReserveEdit ({onNameChange, onEmailChange, onDateChange, onTimeChange}
+//         :{onNameChange:Function, onEmailChange:Function, onDateChange:Function, onTimeChange:Function}) {
+export default function DateReserveEdit ({onDateChange, onTimeChange}
+    :{onDateChange:Function, onTimeChange:Function}) {
             
 
     // const [name, setName]= useState<string|null>(null)
@@ -22,8 +22,8 @@ export default function DateReserve ({onNameChange, onEmailChange, onDateChange,
     const [bookDate, setBookDate]= useState('2022-05-10')
     const [bookTime, setBookTime]= useState('9:00-12:00')
 
-    const [name, setName]= useState<string>('');
-    const [email, setEmail]= useState<string>('');
+    // const [name, setName]= useState<string>('');
+    // const [email, setEmail]= useState<string>('');
     
 
     return (
@@ -31,7 +31,7 @@ export default function DateReserve ({onNameChange, onEmailChange, onDateChange,
         w-fit px-10 py-5 flex flex-row justify-center">
         {/* <form className="space-y-4 "> */}
             
-            <TextField
+            {/* <TextField
                 id="name"
                 label="Name"
                 name="Name"
@@ -52,7 +52,7 @@ export default function DateReserve ({onNameChange, onEmailChange, onDateChange,
                     setEmail(e.target.value);
                     onEmailChange(e.target.value); 
                 }}
-            />
+            /> */}
 
             <Select variant="standard" name="bookDate" id="bookDate" value={bookDate}
             onChange={(e)=>{setBookDate(e.target.value); onDateChange(e.target.value);}}
@@ -71,22 +71,6 @@ export default function DateReserve ({onNameChange, onEmailChange, onDateChange,
                 <MenuItem value="17:00-20:00">17:00-20:00</MenuItem>
             </Select>
              
-{/*         <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker className="bg-white"
-                    value={reserveDate}
-                    onChange={(value)=>{setReserveDate(value); onDateChange(value);}}
-                />
-            </LocalizationProvider> */}
-{/* 
-            <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                name="Book Vaccine"
-                fullWidth
-            >
-                Book Vaccine
-            </Button> */}
         </form>
     )
 }

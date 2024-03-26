@@ -26,16 +26,18 @@ export default async function TopMenu() {
         </div>
 
         <div className={styles.menucontainerright}>
-            <TopMenuItem title='Booking' pageRef='/booking' />
-
-            <Image src={'/img/logo.png'}
-                className={styles.logoimg}
-                alt='logo'
-                width={0}
-                height={0}
-                sizes='100vh'
-            />
+            {/* <TopMenuItem title='Booking' pageRef='/booking' /> */}
+            <Link href="/">
+                <Image src={'/img/logo.png'}
+                    className={styles.logoimg}
+                    alt='logo'
+                    width={0}
+                    height={0}
+                    sizes='100vh'
+                />
+            </Link>
         </div>
+
         </main>
     );
 }
