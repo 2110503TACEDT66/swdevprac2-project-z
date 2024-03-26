@@ -13,16 +13,17 @@ export default function register(){
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
+            console.log(name, tel, email, password, role);
+            console.log('handleSubmit');
             await userRegister(name, tel, email, password, role);
-            alert("Registration successful");
+            // alert("Registration successful");
         } catch (error) {
             alert("Failed to register");
-            console.log(Error)
+            
         }
     };
 
     useEffect(() => { }, []);
-
 
     return(
         <main className="text-center bg-white text-slate-700 p-5">
