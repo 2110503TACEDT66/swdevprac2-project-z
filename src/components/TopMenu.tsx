@@ -21,7 +21,14 @@ export default async function TopMenu() {
                     <div className='flex items-center left-0 h-full px-2  
                     left-0 text-cyan-600 text-sm'>Sign-In</div></Link>
             }
-            
+            {
+                session? null
+                    :<Link href="/auth/register">
+                    <div className='flex items-center left-0 h-full px-2  
+                    left-0 text-cyan-600 text-sm'>
+                    register</div></Link>
+            }
+
             <TopMenuItem title='My Booking' pageRef='/mybooking'/>
         </div>
 

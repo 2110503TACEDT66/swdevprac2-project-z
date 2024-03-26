@@ -6,7 +6,8 @@ import storage from "redux-persist/lib/storage";
 
 const persistConfig={
     key: "rootPersist",
-    storage
+    storage: storage,
+    timeout: 5000
 }
 
 const rootReducer= combineReducers({bookSlice})
