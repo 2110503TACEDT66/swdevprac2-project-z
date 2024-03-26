@@ -17,10 +17,10 @@ export default function Card({ companyName, imgSrc, onCompare}: { companyName: s
                     className='object-cover rounded-t-lg'
                 />
             </div>
-            <div className="w-full h-[15%] p-[10px] font-mono text-blue-950">
+            <div className="w-full h-[15%] p-[10px] font-mono text-slate-100">
                 {companyName}
             </div>
-            <div className="w-full h-[15%] font-mono text-blue-950">
+            <div className="w-full h-[15%] font-mono text-slate-200">
                 <AddIcon></AddIcon>
             </div>
 

@@ -17,7 +17,7 @@ export default function InteractiveCard({children,contentName}:{children:React.R
     }
 
     return(
-        <div className="w-full h-[300px] bg-white rounded-lg shadow-lg" 
+        <div className="w-full h-[300px] bg-slate-600 rounded-lg shadow-lg" 
         // <div className="font-mono text-aliceblue w-1/5 h-[300px] bg-blue-900 rounded-lg shadow-2xl" 
         // onClick={()=>onCardSelected()}
         onMouseOver={(e)=>onCardMouseAction(e)}

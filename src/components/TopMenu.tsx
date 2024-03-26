@@ -15,17 +15,17 @@ export default async function TopMenu() {
         <div className={styles.menucontainerleft}>
             {
                 session? <Link href="/api/auth/signout">
-                    <div className='flex items-center left-0 h-full px-2  
-                    left-0 text-rgb(243, 249, 255) text-sm'>Sign-Out of {session.user?.name}</div></Link>
+                    <div className='flex items-center left-0 h-full px-4  
+                    left-0 text-slate-200 text-sm'>Sign-Out of {session.user?.name}</div></Link>
                     :<Link href="/api/auth/signin">
-                    <div className='flex items-center left-0 h-full px-2  
-                    left-0 text-rgb(243, 249, 255) text-sm'>Sign-In</div></Link>
+                    <div className='flex items-center left-0 h-full px-4  
+                    left-0 text-slate-200 text-sm'>Sign-In</div></Link>
             }
             {
                 session? null
                     :<Link href="/auth/register">
-                    <div className='flex items-center left-0 h-full px-2  
-                    left-0 text-cyan-600 text-sm'>
+                    <div className='flex items-center left-0 h-full px-4  
+                    left-0 text-slate-200 text-sm'>
                     register</div></Link>
             }
 

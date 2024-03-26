@@ -26,7 +26,7 @@ export default function Banner(){
                 <br></br>
                 {/* <h3 className='text-lg font-mono tracking-widest text-orange-700'>Are you ready to take the next step in your career journey? Whether you're a seasoned professional looking for new opportunities or a recent graduate eager to kickstart your career, the Career Advancement Expo is the place to be!</h3> */}
                 <div className='pt-[240px] '>
-                    <button className="dark:bg-white font-mono text-white text-lg
+                    <button className=" font-mono text-white text-lg
                     border border-white py-3 px-4 m-2 rounded z-30 
                     hover:bg-white hover:text-slate-600 hover:border-transparent" 
                     onClick={(e)=>{e.stopPropagation(); router.push('/company')}}>

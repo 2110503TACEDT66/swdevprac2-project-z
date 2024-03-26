@@ -8,9 +8,9 @@ export default async function Company(){
     const companies= await getCompanies() 
     // const companies= getCompanies() 
     return(
-        <main className="text-center bg-white text-slate-700 p-5">
-            <h1 className="text-xl font-mono text-slate-700">
-                Select Your Company </h1>
+        <main className="min-h-screen text-center bg-slate-800 text-slate-300 p-5">
+            <h1 className="text-2xl font-mono text-slate-100">
+                Select Your Company </h1><br></br>
             <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
                 <CompanyCatalog companyJson={companies}/>
             </Suspense>

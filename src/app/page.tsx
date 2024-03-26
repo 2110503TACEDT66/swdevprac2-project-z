@@ -9,7 +9,7 @@ import SelectCard from '@/components/SelectCard'
 export default function Home() {
   return (
     // <main style={{ backgroundColor: "#FFFFFF" , paddingBottom: "30px"}}>
-    <main className='bg-slate-900 pb-[30px]'>
+    <main className='bg-slate-800 pb-[30px]'>
       <Banner/>
       <SelectCard></SelectCard>
     </main>
