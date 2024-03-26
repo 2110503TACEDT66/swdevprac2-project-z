@@ -1,6 +1,6 @@
 .menucontainerleft { 
     height: 50px; 
-    background-color: white;
+    background-color: rgb(28, 101, 132);
     position: fixed;
     font-family: "Monaco", Monospace;
     top: 0px;
@@ -42,5 +42,5 @@
     margin-bottom: auto; 
     font-family: "Monaco", Monospace;
     font-size: 12px;
-    color: grey;
+    color: rgb(243, 249, 255);
 }
