@@ -13,11 +13,11 @@ export default async function CompanyDetailPage({params}: {params:{cid:string}})
                 {companyDetail.data.name}
             </h1>
             <div className="flex flex-row rounded-md my-5 p-[20px]">
-                <Image src= {companyDetail.data.picture}
+                {/* <Image src= {companyDetail.data.picture}
                     alt='Company Pictuce'
                     width={0} height={0} sizes="100vw"
                     className='rounded-ld w-[30%] bg-black'
-                />
+                /> */}
                 <div className="text-md mx-5">
                     <table className="table-auto font-mono border-separate border-spacing-2 tracking-wider" key={companyDetail.data.name}><tbody>
                     

@@ -10,14 +10,14 @@ export default function Card({ companyName, imgSrc, onCompare}: { companyName: s
 
     return(
         <InteractiveCard contentName={companyName}>
-            <div className="w-full h-[70%] relative rounded-t-lg">    
+            {/* <div className="w-full h-[70%] relative rounded-t-lg">    
                 <Image src={imgSrc}
                     alt='Company Pictuce'
                     fill={true}
                     className='object-cover rounded-t-lg'
                 />
-            </div>
-            <div className="w-full h-[15%] p-[10px] font-mono text-slate-100">
+            </div> */}
+            <div className="w-full h-[50%] p-[10px] font-mono text-slate-100">
                 {companyName}
             </div>
             <div className="w-full h-[15%] font-mono text-slate-200">
