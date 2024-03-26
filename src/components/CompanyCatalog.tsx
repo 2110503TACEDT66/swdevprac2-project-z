@@ -13,13 +13,13 @@ export default async function CompanyCatalog({companyJson}:{companyJson:CompanyJ
             justifyContent:"space-around", flexWrap:"wrap", padding:"10px"}}>
                 {
                     companyJsonReady.data.map((companyItem: CompanyItem)=>(
-                        <Link href={`/company/${companyItem.id}`} 
+                        <Link href={`/company/${companyItem.id}`}
                         className='w-[100%] sm:w-[50%] md:w-[30%] lg:w-[25%] p-2 sm:p-4 md:p-4 lg:p-8'>
-                            <Card companyName={companyItem.name} imgSrc={companyItem.picture} />    
+                            <Card companyName={companyItem.name} imgSrc={companyItem.picture} />
                         </Link>
                     ))
                 }
-            </div> 
+            </div>
         </>
     )
 }

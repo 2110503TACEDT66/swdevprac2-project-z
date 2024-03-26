@@ -20,7 +20,7 @@ export default function BookingList(){
                     <div className="text-sm">BookDate: {bookingItem.bookDate}</div>
                     <div className="text-sm">BookTime: {bookingItem.bookTime}</div> */}
 
-                    <table className="table-auto text-sm border-separate border-spacing-2 tracking-wider" key={bookingItem.email}><tbody>
+                    <table className="table-auto text-sm text-black border-separate border-spacing-2 tracking-wider" key={bookingItem.email}><tbody>
                         <tr><td width="90">Name</td> <td>{bookingItem.name}</td></tr>
                         <tr><td>Email</td> <td>{bookingItem.email}</td></tr>
                         <tr><td>Company</td> <td>{bookingItem.company}</td></tr>

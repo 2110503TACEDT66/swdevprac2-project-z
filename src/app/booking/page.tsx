@@ -92,7 +92,7 @@ export default function Booking () {
             <div className="text-xl text-slate-700 ">Company</div> 
             <div className="w-fit space-y-2 pt-[30px] pb-[30px]">
                 <div className="text-md text-left text-gray-600 pb-[20px]"> 
-                    Vaccination booking</div> 
+                    Online Job Fair Booking</div> 
                 <DateReserve 
                 onNameChange={(value:string)=>setName(value)}
                 onEmailChange={(value:string)=>setEmail(value)}
@@ -102,7 +102,7 @@ export default function Booking () {
             </div>
             <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white"
             onClick={makeBooking}>
-                Book Vaccine
+                Book up
             </button>
             {/*<div className='text-xl font-mono tracking-wide'>Vaccine Booking</div> */}        
             
