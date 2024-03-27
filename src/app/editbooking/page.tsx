@@ -89,7 +89,7 @@ export default function EditBooking () {
             <div className="text-xl text-slate-700 ">Company</div> 
             <div className="w-fit space-y-2 pt-[30px] pb-[30px]">
                 <div className="text-md text-left text-gray-600 pb-[20px]"> 
-                    Vaccination booking</div> 
+                    Online job fair booking</div> 
                 <DateReserveEdit
                 onDateChange={(value:string)=>setBookDate(value)} 
                 onTimeChange={(value:string)=>setBookTime(value)} 
@@ -103,7 +103,7 @@ export default function EditBooking () {
             </div>
             <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white"
             onClick={editBook}>
-                Edit Book Vaccine
+                Edit Booking
             </button>
             {/*<div className='text-xl font-mono tracking-wide'>Vaccine Booking</div> */}        
 

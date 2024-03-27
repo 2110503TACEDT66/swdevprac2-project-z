@@ -24,6 +24,7 @@ export const bookSlice= createSlice({
 
             const userBookings = state.bookItems.filter((item) => item.email === email);
             if (userBookings.length >= MAX_BOOKINGS) {
+                alert("No more booking")
                 console.error("User has reached the maximum number of bookings");
                 return;
             }
